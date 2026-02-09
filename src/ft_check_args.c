@@ -6,28 +6,61 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:15:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/08 20:25:59 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/09 22:38:48 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int  ft_arg_is_numeric(char **argv)
+static int  ft_args_are_numeric(int argc, char *argv[])
 {
-    (void) argv;
+    int i;
+
+    i = 1;
+    while (i < argc)
+    {
+        if (!ft_strisnumeric(argv[i]))
+            return (0);
+        i++;
+    }
     return (1);
 }
 
-void	ft_check_args(int argc, char *argv[])
+static int  ft_args_is_in_range(int argc, char *argv[])
 {
-    unsigned int i;
+    long n;
+    int i;
 
-    printf("argc = '%d'\n", argc);
-    i = 0;
-    printf("argument parameters :\n");
-    while (argv[i])
+    i = 1;
+    n = 0;
+    while (i < argc)
     {
-        printf("argv[%d] = '%s'\n", i, argv[i]);
+        n = ft_atol(argv[i]);
+        if ((n > 2147483647) || (n < -2147483648))
+            return (0);
         i++;
     }
+    return (1);
+}
+
+int	*ft_check_args(int argc, char *argv[])
+{
+    int i;
+    int *tab;
+
+    if (!ft_args_are_numeric(argc, argv))
+        ft_error();
+    if (!ft_args_is_in_range(argc, argv))
+        ft_error();
+    tab = (int *) malloc(sizeof(int) * (argc - 1 + 1));
+    if (!tab)
+        return (NULL);
+    i = 0;
+    while (i < argc - 1)
+    {
+        tab[i] = (int) ft_atol(argv[i + 1]);
+        i++;
+    }
+    tab[i] = 0;
+    return (tab);
 }

@@ -1,28 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_strisnumeric.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/09 21:58:54 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/09 20:09:06 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/09 20:14:43 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_utils.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "../utils/ft_utils.h"
+int	ft_strisnumeric(const char *str)
+{
+    int i;
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-
-int     ft_isdigit(int c);
-long	ft_atol(const char *nptr);
-
-char	**ft_split(char const *s, char c);
-
-#endif
+    i = 0;
+    if (!str)
+        return (0);
+    if (ft_issign(str[i]))
+        i++;
+    if (!str[i])
+        return (0);
+    while (str[i])
+    {
+        if (!ft_isdigit(str[i]))
+            return (0);
+        i++;
+    }
+    return (1);
+}

@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/08 20:04:06 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/09 21:59:27 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,14 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "libft/libft.h"
+# include "../libft/libft.h"
+# include "../utils/ft_utils.h"
 
 int     ft_isdigit(int c);
 long	ft_atol(const char *nptr);
 
-void    ft_check_args(int argc, char *argv[]);
+int	*ft_check_args(int argc, char *argv[]);
+int	*ft_check_str(char *argv);
 char    *ft_get_strategy(char **argv);
 
 #endif

@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_check_dup.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/09 21:58:54 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/09 22:21:37 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/09 22:26:04 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+int	ft_has_dup(int *tab, int size)
+{
+	int	i;
+	int	j;
 
-# include <stdlib.h>
-# include <unistd.h>
-# include "../utils/ft_utils.h"
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-
-int     ft_isdigit(int c);
-long	ft_atol(const char *nptr);
-
-char	**ft_split(char const *s, char c);
-
-#endif
+	i = 0;
+	while (i < size)
+	{
+		j = i + 1;
+		while (j < size)
+		{
+			if (tab[i] == tab[j])
+				return (1);
+			j++;
+		}
+		i++;
+	}
+	return (0);
+}

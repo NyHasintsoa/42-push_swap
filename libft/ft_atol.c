@@ -6,21 +6,11 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:56:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/08 18:02:27 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/09 20:04:14 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int	ft_isspace(char c)
-{
-	return (c == 32 || (c >= 9 && c <= 13));
-}
-
-static int	ft_issign(char c)
-{
-	return (c == '+' || c == '-');
-}
 
 long	ft_atol(const char *nptr)
 {

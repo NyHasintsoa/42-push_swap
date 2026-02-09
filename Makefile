@@ -6,16 +6,24 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/08 19:47:18 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/09 22:21:44 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS := main.c ft_check_args.c ft_get_strategy.c
+SRCS := main.c ft_check_args.c ft_get_strategy.c ft_check_str.c \
+		push_swap.c
+
+SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
+		ft_check_dup.c
 
 NAME := push_swap
 
 SRC_DIR := src/
-OBJS := $(addprefix $(SRC_DIR), $(SRCS:.c=.o))
+UTILS_DIR := utils/
+
+OBJS := $(addprefix $(SRC_DIR), $(SRCS:.c=.o)) \
+		$(addprefix $(UTILS_DIR), $(SRCS_UTILS:.c=.o))
+
 LIBFT := libft/libft.a
 CFLAGS := -Wall -Wextra -Werror
 CC := @cc

@@ -1,28 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isspace.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/09 21:58:54 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/09 20:04:21 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/09 20:04:38 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
-
-# include <stdlib.h>
-# include <unistd.h>
-# include "../utils/ft_utils.h"
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-
-int     ft_isdigit(int c);
-long	ft_atol(const char *nptr);
-
-char	**ft_split(char const *s, char c);
-
-#endif
+int	ft_isspace(char c)
+{
+	return (c == 32 || (c >= 9 && c <= 13));
+}
