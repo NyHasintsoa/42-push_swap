@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_strategy.c                                  :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 19:44:07 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 20:06:00 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/10 22:41:13 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/10 22:41:43 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
-
-char	*ft_get_strategy(char **argv)
+int	ft_strcmp(const char *s1, const char *s2)
 {
-	(void) argv;
-	return ("adaptive");
+	int	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i])
+		i++;
+	return (s1[i] - s2[i]);
 }

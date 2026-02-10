@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 20:17:20 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 23:59:03 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,15 @@
 
 # include <stdlib.h>
 # include <unistd.h>
+# include "ft_type.h"
 
 int		ft_isdigit(int c);
 long	ft_atol(const char *nptr);
 
-int		*ft_checker(int argc, char *argv[]);
 int		*ft_check_args(int argc, char *argv[]);
 int		*ft_check_str(char *argv);
-char	*ft_get_strategy(char **argv);
+
+t_options	ft_parse_options(int argc, char *argv[]);
+t_strategy	ft_parse_strategy(const char *str);
 
 #endif
