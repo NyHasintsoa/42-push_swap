@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:18:07 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/08 19:02:45 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:55:22 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 void	ft_putstr(char *str)
 {
-    unsigned int i;
+	unsigned int	i;
 
-    i = 0;
-    if (!str)
-        return ;
-    while (str[i])
-    {
-        ft_putchar(str[i]);
-        i++;
-    }
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
+	{
+		ft_putchar(str[i]);
+		i++;
+	}
 }

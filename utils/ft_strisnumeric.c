@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:09:06 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:30:32 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:58:33 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,20 @@
 
 int	ft_strisnumeric(const char *str)
 {
-    int i;
+	int	i;
 
-    i = 0;
-    if (!str)
-        return (0);
-    if (ft_issign(str[i]))
-        i++;
-    if (!str[i])
-        return (0);
-    while (str[i])
-    {
-        if (!ft_isdigit(str[i]))
-            return (0);
-        i++;
-    }
-    return (1);
+	i = 0;
+	if (!str)
+		return (0);
+	if (ft_issign(str[i]))
+		i++;
+	if (!str[i])
+		return (0);
+	while (str[i])
+	{
+		if (!ft_isdigit(str[i]))
+			return (0);
+		i++;
+	}
+	return (1);
 }

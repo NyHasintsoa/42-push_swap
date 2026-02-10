@@ -6,20 +6,20 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:33:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:30:46 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:58:15 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
 #include "libft.h"
 
-void ft_error(void)
+void	ft_error(void)
 {
-    ft_putstr("Error\n");
-    exit(0);
+	ft_putstr("Error\n");
+	exit(0);
 }
 
-void ft_exit(void)
+void	ft_exit(void)
 {
-    exit(0);
+	exit(0);
 }

@@ -1,41 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atol.c                                          :+:      :+:    :+:   */
+/*   ft_checker.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:56:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:54:21 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/10 19:35:11 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/10 20:15:31 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 #include "ft_utils.h"
 
-long	ft_atol(const char *nptr)
+static int	ft_tab_length(int *tab)
 {
-	int				sign;
 	unsigned int	i;
-	long			result;
 
 	i = 0;
-	result = 0;
-	sign = 1;
-	if (!nptr)
-		return (0);
-	while (ft_isspace(nptr[i]))
+	while (tab[i])
 		i++;
-	if (ft_issign(nptr[i]))
+	return (i);
+}
+
+int	*ft_checker(int argc, char *argv[])
+{
+	int				*tab;
+	unsigned int	length;
+
+	tab = NULL;
+	if ((argc - 1) == 0)
+		ft_error();
+	if ((argc - 1) > 1)
+		tab = ft_check_args(argc, argv);
+	else
+		tab = ft_check_str(argv[1]);
+	length = ft_tab_length(tab);
+	if (ft_has_dup(tab, length))
 	{
-		if (nptr[i] == '-')
-			sign = sign * (-1);
-		i++;
+		free(tab);
+		ft_error();
 	}
-	while (ft_isdigit(nptr[i]))
-	{
-		result = result * 10 + (nptr[i] - '0');
-		i++;
-	}
-	return (result * sign);
+	return (tab);
 }

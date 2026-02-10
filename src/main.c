@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:59:46 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:28:19 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 20:07:21 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,20 +15,9 @@
 
 int	main(int argc, char *argv[])
 {
-    unsigned int i;
-    int *tab;
+	int	*tab;
 
-    i = 0;
-    tab = ft_check_args(argc, argv);
-    while (tab[i])
-    {
-        printf("tab[%d] = '%d'\n", i, tab[i]);
-        i++;
-    }
-    if (!ft_has_dup(tab, i))
-        printf("No duplication !\n");
-    else
-        printf("Error duplication !\n");
-    free(tab);
-    return (0);
+	tab = ft_checker(argc, argv);
+	free(tab);
+	return (0);
 }

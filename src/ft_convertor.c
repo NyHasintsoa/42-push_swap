@@ -1,27 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.h                                        :+:      :+:    :+:   */
+/*   ft_convertor.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 20:17:20 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/10 19:34:28 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/10 20:05:23 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PUSH_SWAP_H
-# define PUSH_SWAP_H
-
-# include <stdlib.h>
-# include <unistd.h>
-
-int		ft_isdigit(int c);
-long	ft_atol(const char *nptr);
-
-int		*ft_checker(int argc, char *argv[]);
-int		*ft_check_args(int argc, char *argv[]);
-int		*ft_check_str(char *argv);
-char	*ft_get_strategy(char **argv);
-
-#endif
