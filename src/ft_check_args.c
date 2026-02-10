@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:15:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/09 22:38:48 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:11:16 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,10 @@ int	*ft_check_args(int argc, char *argv[])
         i++;
     }
     tab[i] = 0;
+    if (ft_has_dup(tab, i))
+    {
+        free(tab);
+        ft_error();
+    }
     return (tab);
 }

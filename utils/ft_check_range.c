@@ -1,33 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   ft_check_range.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:59:46 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:05:14 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/10 19:15:36 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/10 19:20:05 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_utils.h"
 
-int	main(int argc, char *argv[])
+int  ft_words_is_in_range(char **words)
 {
-    unsigned int i;
-    int *tab;
+    long n;
+    int i;
 
-    i = 0;
-    tab = ft_check_args(argc, argv);
-    while (tab[i])
+    i = 1;
+    while (words[i])
     {
-        printf("tab[%d] = '%d'\n", i, tab[i]);
+        n = ft_atol(words[i]);
+        if ((n > 2147483647) || (n < -2147483648))
+            return (0);
         i++;
     }
-    if (!ft_has_dup(tab, i))
-        printf("No duplication !\n");
-    else
-        printf("Error duplication !\n");
-    free(tab);
-    return (0);
+    return (1);
 }
