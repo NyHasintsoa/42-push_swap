@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:15:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:11:16 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:29:48 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_utils.h"
+#include "libft.h"
 
 static int  ft_args_are_numeric(int argc, char *argv[])
 {

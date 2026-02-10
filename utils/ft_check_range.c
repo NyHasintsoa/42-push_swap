@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 19:15:36 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:20:05 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:30:59 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
+#include "libft.h"
 
 int  ft_words_is_in_range(char **words)
 {

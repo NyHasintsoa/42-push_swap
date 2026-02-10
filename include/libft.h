@@ -1,27 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:17:32 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/10 19:26:33 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#ifndef LIBFT_H
+# define LIBFT_H
 
-# include "../libft/libft.h"
+# include <stdlib.h>
+# include <unistd.h>
 
-int	ft_isspace(char c);
-int	ft_issign(char c);
-int	ft_strisnumeric(const char *str);
-int	ft_has_dup(int *tab, int size);
-int  ft_words_is_in_range(char **words);
+void	ft_putchar(char c);
+void	ft_putstr(char *str);
 
-void ft_error(void);
-void ft_exit(void);
+int     ft_isdigit(int c);
+long	ft_atol(const char *nptr);
+
+char	**ft_split(char const *s, char c);
 
 #endif

@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/10 19:17:43 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/10 19:25:41 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,7 @@ NAME := push_swap
 
 SRC_DIR := src/
 UTILS_DIR := utils/
+HEADER_DIR := ./include
 
 OBJS := $(addprefix $(SRC_DIR), $(SRCS:.c=.o)) \
 		$(addprefix $(UTILS_DIR), $(SRCS_UTILS:.c=.o))
@@ -41,7 +42,7 @@ obs:
 	@echo $(OBJS)
 
 .c.o:
-	$(CC) $(CFLAGS) -I . -c $< -o ${<:.c=.o}
+	$(CC) $(CFLAGS) -I$(HEADER_DIR) -c $< -o ${<:.c=.o}
 
 $(NAME): $(LIBFT) $(OBJS)
 	@$(call BLUE,"Compiling Push Swap ...")

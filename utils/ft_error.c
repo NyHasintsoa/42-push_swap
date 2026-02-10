@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:33:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/09 21:35:10 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:30:46 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
+#include "libft.h"
 
 void ft_error(void)
 {

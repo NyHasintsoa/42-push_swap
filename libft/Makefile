@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:51:35 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/09 20:02:20 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/10 19:25:56 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,6 +15,8 @@ SRCS := ft_isdigit.c ft_atol.c \
 		ft_split.c
 
 NAME := libft.a
+
+HEADER_DIR := ../include
 
 OBJS := $(SRCS:.c=.o)
 CFLAGS := -Wall -Wextra -Werror
@@ -26,7 +28,7 @@ RM := @rm -f
 all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -I . -c $< -o ${<:.c=.o}
+	$(CC) $(CFLAGS) -I $(HEADER_DIR) -c $< -o ${<:.c=.o}
 
 $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)

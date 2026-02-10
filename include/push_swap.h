@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:16:40 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/10 19:27:28 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,6 @@
 # include <stdio.h>
 # include <stdlib.h>
 # include <unistd.h>
-# include "../libft/libft.h"
-# include "../utils/ft_utils.h"
 
 int     ft_isdigit(int c);
 long	ft_atol(const char *nptr);
