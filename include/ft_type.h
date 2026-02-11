@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 21:49:52 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 23:34:06 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:43:09 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,13 @@ typedef struct s_options
 	int			*numbers;
 	int			count;
 }	t_options;
+
+typedef struct s_stack
+{
+	int				value;
+	int				index;
+	struct s_stack	*next;
+	struct s_stack	*prev;
+}	t_stack;
 
 #endif

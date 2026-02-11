@@ -6,12 +6,13 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/11 00:01:39 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/11 18:30:22 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS := main.c ft_check_args.c ft_check_str.c \
-		push_swap.c ft_convertor.c ft_parse_options.c ft_parse_strategy.c
+SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c \
+		ft_parse_options.c ft_parse_strategy.c ft_stack.c \
+		ft_strategy_simple.c ft_stack_operations.c
 
 SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
 		ft_check_dup.c ft_check_range.c
