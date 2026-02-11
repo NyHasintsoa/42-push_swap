@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:59:46 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:52:41 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/11 20:50:23 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ int	main(int argc, char *argv[])
 	stack_a = ft_stack_init(opts.numbers, opts.count);
 	stack_b = NULL;
 	printf("\n###\tOperations\t###\n\n");
+    printf("Compute Disorder = '%2f'\n", ft_compute_disorder(opts));
 	push_swap(opts, stack_a, stack_b);
 	ft_stack_free(&stack_a);
 	ft_stack_free(&stack_b);

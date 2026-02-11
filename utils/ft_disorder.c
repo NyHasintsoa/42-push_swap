@@ -1,31 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_disorder.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 20:49:03 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/11 20:33:48 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/11 20:52:24 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#include "ft_type.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "ft_type.h"
+float	ft_compute_disorder(t_options opts)
+{
+	int	i;
+	int	j;
+	int	mistakes;
+	int	total_pairs;
 
-int		ft_isspace(char c);
-int		ft_issign(char c);
-int		ft_strisnumeric(const char *str);
-int		ft_has_dup(int *tab, int size);
-int		ft_words_is_in_range(char **words);
-
-void	ft_error(void);
-void	ft_exit(void);
-
-float	ft_compute_disorder(t_options opts);
-
-#endif
+	i = 0;
+	mistakes = 0;
+	total_pairs = 0;
+	while (i < (opts.count - 1))
+	{
+		j = i + 1;
+		while (j < (opts.count - 1))
+		{
+			total_pairs += 1;
+			if (opts.numbers[i] > opts.numbers[j])
+				mistakes += 1;
+			j++;
+		}
+		i++;
+	}
+	return (mistakes / total_pairs);
+}
