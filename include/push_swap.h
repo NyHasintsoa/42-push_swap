@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:51:25 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/11 20:22:56 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,8 @@ t_options	ft_parse_options(int argc, char *argv[]);
 t_strategy	ft_parse_strategy(const char *str);
 
 t_stack		*ft_stack_new(int value, int index);
-
 t_stack		*ft_stack_top(t_stack **stack);
+void		ft_stackadd_back(t_stack **stacks, t_stack *node);
 
 void		ft_stack_push(t_stack **stack, t_stack *node);
 void		ft_stack_swap(t_stack **stack);

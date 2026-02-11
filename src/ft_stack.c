@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 19:43:11 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/11 19:59:09 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ t_stack	*ft_stack_init(int *numbers, int count)
 			ft_stack_free(&stack);
 			return (NULL);
 		}
-		ft_stack_push(&stack, node);
+		ft_stackadd_back(&stack, node);
 		i++;
 	}
 	return (stack);

@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 17:46:26 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:13:17 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/11 20:23:52 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,24 @@ void	ft_stack_push(t_stack **stack, t_stack *node)
 		node->next = *stack;
 	}
 	*stack = node;
+}
+
+void	ft_stackadd_back(t_stack **stacks, t_stack *node)
+{
+	t_stack	*stack;
+
+	if (!stacks || !node)
+		return ;
+	if (*stacks)
+	{
+		stack = *stacks;
+		while (stack->next)
+			stack = stack->next;
+		stack->next = node;
+		node->prev = stack;
+	}
+	else
+		*stacks = node;
 }
 
 void	ft_stack_swap(t_stack **stack)
