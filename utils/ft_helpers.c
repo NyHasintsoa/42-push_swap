@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_helpers.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 20:51:52 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/15 21:18:27 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/15 21:22:37 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#include "ft_type.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "ft_type.h"
+int	ft_get_max(t_stack *stack)
+{
+	int		max;
+	t_stack	*current;
 
-int		ft_isspace(char c);
-int		ft_issign(char c);
-int		ft_strisnumeric(const char *str);
-int		ft_has_dup(int *tab, int size);
-int		ft_words_is_in_range(char **words);
-
-void	ft_error(void);
-void	ft_exit(void);
-
-float	ft_compute_disorder(t_options opts);
-int		ft_sqrt(int nb);
-
-#endif
+	if (!stack)
+		return (0);
+	max = stack->value;
+	current = stack;
+	while (current)
+	{
+		if (current->value > max)
+			max = current->value;
+		current = current->next;
+	}
+	return (max);
+}

@@ -1,32 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_utils.h                                         :+:      :+:    :+:   */
+/*   ft_strategy_adaptive.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 20:51:52 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/15 21:15:00 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/15 21:36:20 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_UTILS_H
-# define FT_UTILS_H
+#include "push_swap.h"
 
-# include <unistd.h>
-# include <stdlib.h>
-# include "ft_type.h"
-
-int		ft_isspace(char c);
-int		ft_issign(char c);
-int		ft_strisnumeric(const char *str);
-int		ft_has_dup(int *tab, int size);
-int		ft_words_is_in_range(char **words);
-
-void	ft_error(void);
-void	ft_exit(void);
-
-float	ft_compute_disorder(t_options opts);
-int		ft_sqrt(int nb);
-
-#endif
+void	ft_strategy_adaptive(int size, t_stack **stack_a,
+	t_stack **stack_b, float disorder)
+{
+	if (disorder < 0.2)
+		ft_strategy_simple(ft_stack_size(*stack_a), stack_a, stack_b);
+	else if (disorder >= 0.2 && disorder < 0.5)
+		ft_strategy_medium(size, stack_a, stack_b);
+	else if (disorder >= 0.5)
+		ft_strategy_complex(size, stack_a, stack_b);
+}
