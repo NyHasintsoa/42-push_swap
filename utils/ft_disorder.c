@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 20:33:48 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 20:52:24 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:46:19 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ float	ft_compute_disorder(t_options opts)
 	while (i < (opts.count - 1))
 	{
 		j = i + 1;
-		while (j < (opts.count - 1))
+		while (j < opts.count)
 		{
 			total_pairs += 1;
 			if (opts.numbers[i] > opts.numbers[j])
@@ -34,5 +34,5 @@ float	ft_compute_disorder(t_options opts)
 		}
 		i++;
 	}
-	return (mistakes / total_pairs);
+	return ((float)mistakes / total_pairs);
 }

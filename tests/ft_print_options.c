@@ -1,34 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_reverse_operations.c                            :+:      :+:    :+:   */
+/*   ft_print_options.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 19:19:39 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 19:49:20 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/15 19:40:03 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/15 19:49:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_type.h"
-#include "push_swap.h"
-#include "libft.h"
+#include "ft_test.h"
 
-void	ft_rra(t_stack **stack_a)
+void	ft_print_options(t_options opts)
 {
-	ft_putstr("rra\n");
-	ft_stack_reverse_rotate(stack_a);
-}
+	const char	*strategy_names[] = {"SIMPLE", "MEDIUM", "COMPLEX", "ADAPTIVE"};
 
-void	ft_rrb(t_stack **stack_b)
-{
-	ft_putstr("rrb\n");
-	ft_stack_reverse_rotate(stack_b);
-}
-
-void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
-{
-	ft_putstr("rrr\n");
-	ft_stack_reverse_rotate(stack_a);
-	ft_stack_reverse_rotate(stack_b);
+	ft_putstr("Strategy: ");
+	ft_putstr((char *) strategy_names[opts.strategy]);
+	ft_putstr("\n");
+	if (opts.bench)
+	{
+		ft_putstr("Benchmark: enabled\n");
+	}
+	printf("Numbers count: %d\n", opts.count);
+	ft_putstr("OK\n");
 }

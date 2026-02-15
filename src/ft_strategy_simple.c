@@ -6,37 +6,78 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:26:42 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:48:42 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
+#include "ft_test.h"
 
-void	ft_strategy_simple(t_stack **stack_a, t_stack **stack_b)
+static int	ft_find_min_position(t_stack *stack)
 {
-	int		size_a;
+	int		min;
+	int		pos;
 	int		i;
+	t_stack	*current;
 
-	if (!stack_a || !*stack_a)
-		return ;
-	size_a = ft_stack_size(*stack_a);
+	if (!stack)
+		return (-1);
+	min = stack->value;
+	pos = 0;
 	i = 0;
-	while (i < size_a)
+	current = stack;
+	while (current)
 	{
-		ft_putstr("pb\n");
-		ft_stack_push(stack_b, ft_stack_top(stack_a));
-		if ((*stack_b && (*stack_b)->next)
-			&& ((*stack_b)->value < (*stack_b)->next->value))
+		if (current->value < min)
 		{
-			ft_putstr("rb\n");
-			ft_stack_rotate(stack_b);
+			min = current->value;
+			pos = i;
 		}
+		current = current->next;
+		i++;
+	}
+	return (pos);
+}
+
+static void	ft_rotate_to_top(t_stack **stack, int pos, int size)
+{
+	int	i;
+
+	i = 0;
+	if (pos <= size / 2)
+	{
+		while (i < pos)
+		{
+			ft_ra(stack);
+			i++;
+		}
+	}
+	else
+	{
+		while (i < size - pos)
+		{
+			ft_rra(stack);
+			i++;
+		}
+	}
+}
+
+void	ft_strategy_simple(int size, t_stack **stack_a, t_stack **stack_b)
+{
+	int	i;
+	int	min_pos;
+
+	i = 0;
+	while (i < size)
+	{
+		min_pos = ft_find_min_position(*stack_a);
+		ft_rotate_to_top(stack_a, min_pos, size);
+		ft_pb(stack_a, stack_b);
 		i++;
 	}
 	while (*stack_b)
 	{
-		ft_putstr("pa\n");
-		ft_stack_push(stack_a, ft_stack_top(stack_b));
+		ft_pa(stack_a, stack_b);
 	}
 }
