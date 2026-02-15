@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:12:42 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:55:48 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,10 +64,6 @@ t_options	ft_parse_options(int argc, char *argv[])
 	opts.bench = 0;
 	opts.numbers = NULL;
 	i = 1;
-	if ((argc - 1) == 0)
-	{
-		ft_exit();
-	}
 	while (i < argc && ft_is_option(argv[i]))
 	{
 		if (ft_parse_strategy(argv[i]) != STRATEGY_UNKNOWN)

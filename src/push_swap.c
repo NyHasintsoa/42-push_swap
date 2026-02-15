@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 19:53:59 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/15 20:13:25 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,17 @@ void	push_swap(int argc, char *argv[])
 	t_stack		*stack_b;
 
 	opts = ft_parse_options(argc, argv);
+    printf("################### OPTIONS ###################\n");
 	ft_print_options(opts);
+    printf("################# END OPTIONS #################\n\n");
 	stack_a = ft_stack_init(opts.numbers, opts.count);
 	if (!stack_a)
 		ft_error();
+    printf("############### INITIAL STACK A ###############\n");
+    ft_print_stack(stack_a);
+    printf("############# END INITIAL STACK A #############\n\n");
 	stack_b = NULL;
+    printf("################### SORTING ###################\n");
 	if (opts.strategy == STRATEGY_SIMPLE)
 		ft_strategy_simple(opts.count, &stack_a, &stack_b);
 	else if (opts.strategy == STRATEGY_ADAPTIVE)
@@ -35,7 +41,10 @@ void	push_swap(int argc, char *argv[])
 		ft_strategy_simple(opts.count, &stack_a, &stack_b);
 	else if (opts.strategy == STRATEGY_COMPLEX)
 		ft_strategy_simple(opts.count, &stack_a, &stack_b);
+    printf("################# END SORTING #################\n\n");
+    printf("############### SORTED  STACK A ###############\n");
 	ft_print_stack(stack_a);
+    printf("############# END SORTED  STACK A #############\n");
 	ft_stack_free(&stack_a);
 	ft_stack_free(&stack_b);
 	free(opts.numbers);
