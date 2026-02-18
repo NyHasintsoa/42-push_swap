@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:00:02 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 20:10:26 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/18 09:54:01 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	ft_words_are_numeric(char *words[])
 {
 	int	i;
 
-	i = 1;
+	i = 0;
 	while (words[i])
 	{
 		if (!ft_strisnumeric(words[i]))

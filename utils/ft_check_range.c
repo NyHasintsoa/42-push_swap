@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 19:15:36 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:58:01 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/18 10:00:53 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	ft_words_is_in_range(char **words)
 	long	n;
 	int		i;
 
-	i = 1;
+	i = 0;
 	while (words[i])
 	{
 		n = ft_atol(words[i]);
