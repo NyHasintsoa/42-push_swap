@@ -6,11 +6,11 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/15 21:31:21 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/22 18:16:37 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c \
+SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c ft_check_sort.c \
 		ft_parse_options.c ft_parse_strategy.c ft_stack.c ft_stack_operations.c \
 		ft_push_operations.c ft_reverse_operations.c \
 		ft_rotate_operations.c ft_swap_operations.c \
