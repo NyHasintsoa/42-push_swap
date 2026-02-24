@@ -6,36 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 21:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 20:54:15 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 21:19:24 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
-
-static void	ft_sort_array(int *arr, int size)
-{
-	int	i;
-	int	j;
-	int	temp;
-
-	i = 0;
-	while (i < size - 1)
-	{
-		j = 0;
-		while (j < size - i - 1)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-			j++;
-		}
-		i++;
-	}
-}
 
 static int	ft_get_pivot(t_stack *stack, int size)
 {
@@ -83,6 +59,22 @@ static void	ft_restore_positions(t_stack **a, int rotations)
 	}
 }
 
+static void	ft_reinsert_from_b(t_stack **stack_a, t_stack **stack_b)
+{
+	int	target;
+
+	while (*stack_b)
+	{
+		target = ft_get_stack_target_index(*stack_a, (*stack_b)->value);
+		ft_rotate_to_pos(stack_a, target, ft_stack_size(*stack_a), 1);
+		ft_pa(stack_a, stack_b);
+	}
+	ft_rotate_to_pos(
+		stack_a,
+		ft_get_min_pos(*stack_a),
+		ft_stack_size(*stack_a), 1);
+}
+
 void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
 {
 	int	pivot;
@@ -103,10 +95,7 @@ void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
 	pushed = ft_partition_a(stack_a, stack_b, pivot, size);
 	rots = size - pushed;
 	ft_restore_positions(stack_a, rots);
-	ft_strategy_complex(rots, stack_a, stack_b);
-	while (pushed < 0)
-	{
-		ft_pa(stack_a, stack_b);
-		pushed--;
-	}
+	if (rots > 3)
+		ft_strategy_complex(rots, stack_a, stack_b);
+	ft_reinsert_from_b(stack_a, stack_b);
 }

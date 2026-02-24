@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 20:53:32 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 21:19:53 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,6 +57,7 @@ int			ft_get_max_pos(t_stack *stack);
 int			ft_get_stack_target_index(t_stack *stack, int value);
 void		ft_rotate_to_pos(t_stack **stack, int pos, int size, int is_a);
 void		ft_sort_three(t_stack **stack);
+void		ft_sort_array(int *arr, int size);
 
 void		ft_strategy_simple(t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b);
