@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 20:36:50 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 21:42:33 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,5 @@ int		ft_sqrt(int nb);
 
 int		ft_get_max(t_stack *stack);
 int		ft_get_min(t_stack *stack);
-
-int		*ft_stack_to_array(t_stack *stack, int size);
 
 #endif
