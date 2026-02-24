@@ -6,39 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 19:49:56 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 20:52:46 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
-
-static void	ft_sort_three(t_stack **stack_a)
-{
-	int	first;
-	int	second;
-	int	third;
-
-	first = (*stack_a)->value;
-	second = (*stack_a)->next->value;
-	third = (*stack_a)->next->next->value;
-	if (first > second && second < third && first < third)
-		ft_sa(stack_a);
-	else if (first > second && second > third)
-	{
-		ft_sa(stack_a);
-		ft_rra(stack_a);
-	}
-	else if (first > second && second < third && first > third)
-		ft_ra(stack_a);
-	else if (first < second && second > third && first < third)
-	{
-		ft_sa(stack_a);
-		ft_ra(stack_a);
-	}
-	else if (first < second && second > third && first > third)
-		ft_rra(stack_a);
-}
 
 void	ft_strategy_simple(t_stack **stack_a, t_stack **stack_b)
 {

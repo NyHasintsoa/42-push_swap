@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:41:32 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 20:00:16 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 21:02:45 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,4 +112,31 @@ void	ft_rotate_to_pos(t_stack **stack, int pos, int size, int is_a)
 			pos++;
 		}
 	}
+}
+
+void	ft_sort_three(t_stack **stack)
+{
+	int	first;
+	int	second;
+	int	third;
+
+	first = (*stack)->value;
+	second = (*stack)->next->value;
+	third = (*stack)->next->next->value;
+	if (first > second && second < third && first < third)
+		ft_sa(stack);
+	else if (first > second && second > third)
+	{
+		ft_sa(stack);
+		ft_rra(stack);
+	}
+	else if (first > second && second < third && first > third)
+		ft_ra(stack);
+	else if (first < second && second > third && first < third)
+	{
+		ft_sa(stack);
+		ft_ra(stack);
+	}
+	else if (first < second && second > third && first > third)
+		ft_rra(stack);
 }

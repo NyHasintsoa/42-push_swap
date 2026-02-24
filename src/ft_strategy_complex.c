@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 21:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 20:42:32 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 20:54:15 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,26 +83,30 @@ static void	ft_restore_positions(t_stack **a, int rotations)
 	}
 }
 
-void	ft_strategy_complex(int size, t_stack **a, t_stack **b)
+void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
 {
 	int	pivot;
 	int	pushed;
-	int	rotations;
+	int	rots;
 
-	if (size <= 5)
+	if (size <= 3)
 	{
-		ft_strategy_simple(a, b);
+		if (size == 3)
+			ft_sort_three(stack_a);
+		else if (size == 2 && (*stack_a)->value > (*stack_a)->next->value)
+			ft_sa(stack_a);
 		return ;
 	}
 	if (size <= 100)
+		return (ft_strategy_medium(size, stack_a, stack_b));
+	pivot = ft_get_pivot(*stack_a, size);
+	pushed = ft_partition_a(stack_a, stack_b, pivot, size);
+	rots = size - pushed;
+	ft_restore_positions(stack_a, rots);
+	ft_strategy_complex(rots, stack_a, stack_b);
+	while (pushed < 0)
 	{
-		ft_strategy_medium(size, a, b);
-		return ;
+		ft_pa(stack_a, stack_b);
+		pushed--;
 	}
-	pivot = ft_get_pivot(*a, size);
-	pushed = ft_partition_a(a, b, pivot, size);
-	rotations = size - pushed;
-	ft_restore_positions(a, rotations);
-	ft_strategy_complex(pushed, b, a);
-	ft_strategy_complex(rotations, a, b);
 }
