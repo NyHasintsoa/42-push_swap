@@ -3,3 +3,4 @@ push_swap
 /.vscode
 args.txt
 checker_linux
+push_swap_test_linux.sh

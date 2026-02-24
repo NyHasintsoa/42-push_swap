@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 21:47:11 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 22:15:59 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ static void	ft_sort_stack(
 	t_stack **stack_b
 ) {
 	if (opts.strategy == STRATEGY_SIMPLE)
-		ft_strategy_simple(stack_a, stack_b);
+		ft_strategy_simple(opts.count, stack_a, stack_b);
 	else if (opts.strategy == STRATEGY_ADAPTIVE)
 		ft_strategy_adaptive(
 			opts.count,
