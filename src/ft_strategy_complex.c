@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 21:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 21:35:56 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:34:26 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,5 @@
 void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
 {
 	(void) size;
-	(void) stack_a;
-	(void) stack_b;
+	ft_strategy_simple(stack_a, stack_b);
 }

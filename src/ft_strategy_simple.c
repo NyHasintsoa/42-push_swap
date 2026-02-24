@@ -6,19 +6,20 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 21:37:09 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:41:36 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 #include "ft_test.h"
+#include <stdio.h>
 
 static int	ft_find_min_position(t_stack *stack)
 {
-	int		min;
-	int		pos;
-	int		i;
+	int	min;
+	int	pos;
+	int	i;
 	t_stack	*current;
 
 	if (!stack)
@@ -63,18 +64,15 @@ static void	ft_rotate_to_top(t_stack **stack, int pos, int size)
 	}
 }
 
-void	ft_strategy_simple(int size, t_stack **stack_a, t_stack **stack_b)
+void	ft_strategy_simple(t_stack **stack_a, t_stack **stack_b)
 {
-	int	i;
 	int	min_pos;
 
-	i = 0;
-	while (i < size)
+	while (ft_stack_size(*stack_a) > 0)
 	{
 		min_pos = ft_find_min_position(*stack_a);
-		ft_rotate_to_top(stack_a, min_pos, size);
+		ft_rotate_to_top(stack_a, min_pos, ft_stack_size(*stack_a));
 		ft_pb(stack_a, stack_b);
-		i++;
 	}
 	while (*stack_b)
 	{

@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/22 18:29:32 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:33:30 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void		ft_rra(t_stack **stack_a);
 void		ft_rrb(t_stack **stack_b);
 void		ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
-void		ft_strategy_simple(int size, t_stack **stack_a, t_stack **stack_b);
+void		ft_strategy_simple(t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_adaptive(

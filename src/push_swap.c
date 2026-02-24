@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/22 19:31:42 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 12:33:41 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include "ft_utils.h"
 #include "ft_test.h"
 
-static int	ft_sort_stack(
+static void	ft_sort_stack(
 	t_options opts,
 	t_stack **stack_a,
 	t_stack **stack_b,
@@ -23,7 +23,7 @@ static int	ft_sort_stack(
 ) {
 	printf("################### SORTING ###################\n");
 	if (opts.strategy == STRATEGY_SIMPLE)
-		ft_strategy_simple(opts.count, stack_a, stack_b);
+		ft_strategy_simple(stack_a, stack_b);
 	else if (opts.strategy == STRATEGY_ADAPTIVE)
 		ft_strategy_adaptive(opts.count, stack_a, stack_b, disorder);
 	else if (opts.strategy == STRATEGY_MEDIUM)
@@ -31,7 +31,6 @@ static int	ft_sort_stack(
 	else if (opts.strategy == STRATEGY_COMPLEX)
 		ft_strategy_complex(opts.count, stack_a, stack_b);
 	printf("################# END SORTING #################\n\n");
-	return (ft_check_stack_sorted(*stack_a, opts.count));
 }
 
 void	push_swap(t_options opts)
@@ -39,7 +38,6 @@ void	push_swap(t_options opts)
 	float		disorder;
 	t_stack		*stack_a;
 	t_stack		*stack_b;
-	int			is_sorted;
 
 	disorder = ft_compute_disorder(opts);
 	printf("################### OPTIONS ###################\n");
@@ -56,12 +54,7 @@ void	push_swap(t_options opts)
 	ft_print_stack(stack_a);
 	printf("############# END INITIAL STACK A #############\n\n");
 	stack_b = NULL;
-	is_sorted = 0;
-	while (is_sorted == 0)
-	{
-		if (ft_sort_stack(opts, &stack_a, &stack_b, disorder))
-			is_sorted = 1;
-	}
+	ft_sort_stack(opts, &stack_a, &stack_b, disorder);
 	printf("############### SORTED  STACK A ###############\n");
 	ft_print_stack(stack_a);
 	printf("############# END SORTED  STACK A #############\n\n");
