@@ -6,11 +6,10 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:18:17 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 19:48:55 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 19:52:02 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_type.h"
 #include "push_swap.h"
 #include "libft.h"
 

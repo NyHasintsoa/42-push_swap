@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/24 13:33:40 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/24 19:44:46 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c ft_check_sort.c \
 		ft_parse_options.c ft_parse_strategy.c ft_stack.c ft_stack_operations.c \
 		ft_push_operations.c ft_reverse_operations.c \
 		ft_rotate_operations.c ft_swap_operations.c \
-		ft_strategy_simple_helper.c ft_strategy_simple.c \
+		ft_sort_helper.c ft_strategy_simple.c \
 		ft_strategy_medium.c ft_strategy_complex.c \
 		ft_strategy_adaptive.c \
 

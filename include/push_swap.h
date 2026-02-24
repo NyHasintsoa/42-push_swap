@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 13:35:10 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 19:51:14 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,10 @@ void		ft_rrr(t_stack **stack_a, t_stack **stack_b);
 
 int			ft_get_min_pos(t_stack *stack);
 int			ft_get_max_pos(t_stack *stack);
-int			get_target_index(t_stack *b, int val_a);
-void		ft_strategy_simple(t_stack **stack_a, t_stack **stack_b);
+int			ft_get_stack_target_index(t_stack *stack, int value);
+void		ft_rotate_to_pos(t_stack **stack, int pos, int size, int is_a);
 
+void		ft_strategy_simple(t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b);
 void		ft_strategy_adaptive(

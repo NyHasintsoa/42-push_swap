@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 20:51:52 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/24 19:37:04 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ void	ft_exit(void);
 
 float	ft_compute_disorder(t_options opts);
 int		ft_sqrt(int nb);
+
+int		ft_get_max(t_stack *stack);
+int		ft_get_min(t_stack *stack);
 
 #endif

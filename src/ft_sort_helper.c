@@ -1,39 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strategy_simple_helper.c                        :+:      :+:    :+:   */
+/*   ft_sort_helper.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/24 13:30:42 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 13:39:39 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/24 19:41:32 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/24 20:00:16 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
 
 int	ft_get_min_pos(t_stack *stack)
 {
 	int		min;
 	int		min_pos;
 	int		pos;
-	t_stack	*curr;
+	t_stack	*current;
 
 	if (!stack)
 		return (-1);
 	min = stack->value;
 	min_pos = 0;
 	pos = 0;
-	curr = stack;
-	while (curr)
+	current = stack;
+	while (current)
 	{
-		if (curr->value < min)
+		if (current->value < min)
 		{
-			min = curr->value;
+			min = current->value;
 			min_pos = pos;
 		}
-		curr = curr->next;
+		current = current->next;
 		pos++;
 	}
 	return (min_pos);
@@ -44,47 +43,73 @@ int	ft_get_max_pos(t_stack *stack)
 	int		max;
 	int		max_pos;
 	int		pos;
-	t_stack	*curr;
+	t_stack	*current;
 
 	max = stack->value;
 	max_pos = 0;
 	pos = 0;
-	curr = stack;
-	while (curr)
+	current = stack;
+	while (current)
 	{
-		if (curr->value > max)
+		if (current->value > max)
 		{
-			max = curr->value;
+			max = current->value;
 			max_pos = pos;
 		}
-		curr = curr->next;
+		current = current->next;
 		pos++;
 	}
 	return (max_pos);
 }
 
-int	get_target_index(t_stack *b, int val_a)
+int	ft_get_stack_target_index(t_stack *stack, int value)
 {
-	t_stack	*curr;
+	t_stack	*current;
 	int		i;
 	int		target_i;
-	long	closest_smaller;
+	long	closest_larger;
 
-	curr = b;
+	current = stack;
 	i = 0;
 	target_i = -1;
-	closest_smaller = -2147483649LL;
-	while (curr)
+	closest_larger = 2147483648LL;
+	while (current)
 	{
-		if (curr->value < val_a && curr->value > closest_smaller)
+		if (current->value > value && current->value < closest_larger)
 		{
-			closest_smaller = curr->value;
+			closest_larger = current->value;
 			target_i = i;
 		}
-		curr = curr->next;
+		current = current->next;
 		i++;
 	}
 	if (target_i == -1)
-		return (ft_get_max_pos(b));
+		return (ft_get_min_pos(stack));
 	return (target_i);
+}
+
+void	ft_rotate_to_pos(t_stack **stack, int pos, int size, int is_a)
+{
+	if (pos <= size / 2)
+	{
+		while (pos > 0)
+		{
+			if (is_a)
+				ft_ra(stack);
+			else
+				ft_rb(stack);
+			pos--;
+		}
+	}
+	else
+	{
+		while (pos < size)
+		{
+			if (is_a)
+				ft_rra(stack);
+			else
+				ft_rrb(stack);
+			pos++;
+		}
+	}
 }
