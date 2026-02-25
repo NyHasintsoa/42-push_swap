@@ -6,13 +6,13 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 00:45:30 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 01:26:10 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-t_stack	*ft_stack_new(int value, int index)
+static t_stack	*ft_stack_new(int value, int index)
 {
 	t_stack	*node;
 
