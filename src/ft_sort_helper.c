@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:41:32 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 01:40:18 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 01:57:46 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,4 +87,48 @@ void	ft_sort_three(t_stack **stack)
 	}
 	else if (first < second && second > third && first > third)
 		ft_rra(stack);
+}
+
+static void	ft_put_min_top(t_stack **stack_a)
+{
+	int	min_pos;
+	int	size;
+
+	min_pos = ft_get_min_pos(*stack_a);
+	size = ft_stack_size(*stack_a);
+	if (min_pos <= size / 2)
+	{
+		while (min_pos > 0)
+		{
+			ft_ra(stack_a);
+			min_pos--;
+		}
+	}
+	else
+	{
+		min_pos = size - min_pos;
+		while (min_pos > 0)
+		{
+			ft_rra(stack_a);
+			min_pos--;
+		}
+	}
+}
+
+void	ft_sort_min(t_stack **stack_a, t_stack **stack_b, int size)
+{
+	int	push_count;
+
+	push_count = size - 3;
+	while (push_count > 0)
+	{
+		ft_put_min_top(stack_a);
+		if (ft_check_stack_sorted(*stack_a, size))
+			break ;
+		ft_pb(stack_a, stack_b);
+		push_count--;
+	}
+	ft_sort_three(stack_a);
+	while (*stack_b)
+		ft_pa(stack_a, stack_b);
 }
