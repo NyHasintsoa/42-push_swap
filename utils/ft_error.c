@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:33:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:58:15 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/25 12:29:31 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 void	ft_error(void)
 {
-	ft_putstr("Error\n");
+	write(2, "Error\n", 6);
 	exit(0);
 }
 

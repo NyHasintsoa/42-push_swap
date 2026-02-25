@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 22:10:41 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/25 13:35:21 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ void	ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b)
 	int	i;
 	int	c_max;
 
-	if (size <= 50)
+	if (size <= 10)
 	{
 		ft_strategy_simple(size, stack_a, stack_b);
 		return ;
