@@ -1,32 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_count.c                                         :+:      :+:    :+:   */
+/*   ft_stack_utils.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/25 17:47:52 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 00:55:57 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/26 00:43:39 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/26 00:55:31 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_count_numbers(const char *s, char c)
-{
-	int	count;
-	int	in_word;
+#include "push_swap.h"
 
-	count = 0;
-	in_word = 0;
-	while (*s)
+t_stack	*ft_stack_top(t_stack **stack)
+{
+	t_stack	*node;
+
+	if (!stack || !*stack)
+		return (NULL);
+	node = *stack;
+	*stack = (*stack)->next;
+	if (*stack)
+		(*stack)->prev = NULL;
+	node->next = NULL;
+	node->prev = NULL;
+	return (node);
+}
+
+int	ft_stack_size(t_stack *stack)
+{
+	int	size;
+
+	size = 0;
+	while (stack)
 	{
-		if (*s != c && in_word == 0)
-		{
-			in_word = 1;
-			count++;
-		}
-		else if (*s == c)
-			in_word = 0;
-		s++;
+		size++;
+		stack = stack->next;
 	}
-	return (count);
+	return (size);
 }

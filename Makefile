@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/25 17:58:39 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/26 00:43:36 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c ft_check_sort.c \
 		ft_strategy_medium.c ft_strategy_complex.c ft_strategy_adaptive.c \
 
 SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
-		ft_check_dup.c ft_check_range.c ft_disorder.c ft_helpers.c ft_count.c
+		ft_check_dup.c ft_check_range.c ft_disorder.c ft_helpers.c ft_count.c \
+		ft_stack_utils.c
 
 SRCS_TESTS := ft_print_stack.c ft_print_options.c
 

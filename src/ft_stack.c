@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 19:59:09 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 00:45:30 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,34 +26,6 @@ t_stack	*ft_stack_new(int value, int index)
 	return (node);
 }
 
-t_stack	*ft_stack_top(t_stack **stack)
-{
-	t_stack	*node;
-
-	if (!stack || !*stack)
-		return (NULL);
-	node = *stack;
-	*stack = (*stack)->next;
-	if (*stack)
-		(*stack)->prev = NULL;
-	node->next = NULL;
-	node->prev = NULL;
-	return (node);
-}
-
-int	ft_stack_size(t_stack *stack)
-{
-	int	size;
-
-	size = 0;
-	while (stack)
-	{
-		size++;
-		stack = stack->next;
-	}
-	return (size);
-}
-
 void	ft_stack_free(t_stack **stack)
 {
 	t_stack	*current;
@@ -69,6 +41,31 @@ void	ft_stack_free(t_stack **stack)
 		current = next;
 	}
 	*stack = NULL;
+}
+
+static void	ft_assign_index(t_stack *stack, int size)
+{
+	int		i;
+	t_stack	*curr;
+	t_stack	*compare;
+	int		index;
+
+	curr = stack;
+	i = 0;
+	while (i < size)
+	{
+		index = 0;
+		compare = stack;
+		while (compare)
+		{
+			if (compare->value < curr->value)
+				index++;
+			compare = compare->next;
+		}
+		curr->index = index;
+		curr = curr->next;
+		i++;
+	}
 }
 
 t_stack	*ft_stack_init(int *numbers, int count)
@@ -92,5 +89,6 @@ t_stack	*ft_stack_init(int *numbers, int count)
 		ft_stackadd_back(&stack, node);
 		i++;
 	}
+	ft_assign_index(stack, count);
 	return (stack);
 }

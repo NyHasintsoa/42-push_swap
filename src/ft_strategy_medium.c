@@ -6,87 +6,80 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/25 13:35:21 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 00:54:44 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
 
-static int	ft_get_chunk_size(int size)
+static void	move_max_to_top(t_stack **stack_b)
 {
-	if (size <= 100)
-		return (size / 5);
-	if (size <= 500)
-		return (size / 11);
-	return (size / 15);
+	int	max_pos;
+	int	size;
+
+	if (!stack_b || !*stack_b)
+		return ;
+	max_pos = ft_get_max_pos(*stack_b);
+	size = ft_stack_size(*stack_b);
+	if (max_pos <= size / 2)
+	{
+		while (max_pos > 0)
+		{
+			ft_rb(stack_b);
+			max_pos--;
+		}
+	}
+	else
+	{
+		max_pos = size - max_pos;
+		while (max_pos > 0)
+		{
+			ft_rrb(stack_b);
+			max_pos--;
+		}
+	}
 }
 
-static void	ft_push_chunk_to_b(
-	t_stack **stack_a, t_stack **stack_b,
-	int min, int max
-) {
-	int	size;
-	int	pushed;
-	int	limit;
-
-	size = ft_stack_size(*stack_a);
-	pushed = 0;
-	limit = max - min + 1;
-	while (size > 0 && pushed < limit)
+static void	empty_stack_b(t_stack **stack_b, t_stack **stack_a)
+{
+	while (*stack_b)
 	{
-		if ((*stack_a)->value >= min && (*stack_a)->value <= max)
+		move_max_to_top(stack_b);
+		ft_pa(stack_a, stack_b);
+	}
+}
+
+static void	push_to_b_by_chunks(t_stack **stack_a, t_stack **stack_b, int chunk)
+{
+	int	i;
+
+	i = 0;
+	while (*stack_a)
+	{
+		if ((*stack_a)->index <= i)
 		{
 			ft_pb(stack_a, stack_b);
-			pushed++;
+			i++;
+		}
+		else if ((*stack_a)->index <= i + chunk)
+		{
+			ft_pb(stack_a, stack_b);
+			i++;
 		}
 		else
 			ft_ra(stack_a);
-		size--;
 	}
-}
-
-static void	ft_merge_back(t_stack **stack_a, t_stack **stack_b)
-{
-	int	target;
-
-	while (*stack_b)
-	{
-		target = ft_get_stack_target_index(*stack_a, (*stack_b)->value);
-		ft_rotate_to_pos(stack_a, target, ft_stack_size(*stack_a), 1);
-		ft_pa(stack_a, stack_b);
-	}
-	ft_rotate_to_pos(
-		stack_a,
-		ft_get_min_pos(*stack_a),
-		ft_stack_size(*stack_a),
-		1);
 }
 
 void	ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b)
 {
-	int	min;
-	int	max;
-	int	c_size;
-	int	i;
-	int	c_max;
+	int	chunk;
 
-	if (size <= 10)
-	{
-		ft_strategy_simple(size, stack_a, stack_b);
-		return ;
-	}
-	min = ft_get_min(*stack_a);
-	max = ft_get_max(*stack_a);
-	c_size = ft_get_chunk_size(size);
-	i = 0;
-	while (i * c_size <= (max - min))
-	{
-		c_max = min + (i + 1) * c_size - 1;
-		if (c_max > max)
-			c_max = max;
-		ft_push_chunk_to_b(stack_a, stack_b, min + i * c_size, c_max);
-		i++;
-	}
-	ft_merge_back(stack_a, stack_b);
+	if (size <= 100)
+		chunk = size / 16;
+	else
+		chunk = size / 30;
+	push_to_b_by_chunks(stack_a, stack_b, chunk);
+	empty_stack_b(stack_b, stack_a);
 }
