@@ -6,58 +6,43 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/24 22:13:28 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/25 23:51:34 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "libft.h"
 
-static void	ft_push_to_b(t_stack **a, t_stack **b)
+static void	ft_put_min_top(t_stack **stack_a)
 {
-	int	target;
+	int	min_index;
+	int	size;
+	int	reverse;
 
-	if (ft_stack_size(*a) > 3)
-		ft_pb(a, b);
-	if (ft_stack_size(*a) > 3)
-		ft_pb(a, b);
-	while (ft_stack_size(*a) > 3)
+	min_index = ft_get_min_pos(*stack_a);
+	if (min_index < 0)
+		return ;
+	size = ft_stack_size(*stack_a);
+	if (min_index < size / 2)
 	{
-		target = ft_get_stack_target_index(*b, (*a)->value);
-		ft_rotate_to_pos(b, target, ft_stack_size(*b), 0);
-		ft_pb(a, b);
+		while (min_index--)
+			ft_ra(stack_a);
+		return ;
 	}
-}
-
-static void	ft_push_to_a(t_stack **a, t_stack **b)
-{
-	int	target;
-
-	while (*b)
-	{
-		target = ft_get_stack_target_index(*a, (*b)->value);
-		ft_rotate_to_pos(a, target, ft_stack_size(*a), 1);
-		ft_pa(a, b);
-	}
-	ft_rotate_to_pos(a, ft_get_min_pos(*a), ft_stack_size(*a), 1);
+	reverse = size - min_index;
+	while (reverse--)
+		ft_rra(stack_a);
 }
 
 void	ft_strategy_simple(int size, t_stack **stack_a, t_stack **stack_b)
 {
-	if (size <= 1)
-		return ;
-	if (size == 2)
+	while (*stack_a && (*stack_a)->next)
 	{
-		if ((*stack_a)->value > (*stack_a)->next->value)
-			ft_sa(stack_a);
-		return ;
+		ft_put_min_top(stack_a);
+		if (ft_check_stack_sorted(*stack_a, size))
+			break ;
+		ft_pb(stack_a, stack_b);
 	}
-	if (size == 3)
-	{
-		ft_sort_three(stack_a);
-		return ;
-	}
-	ft_push_to_b(stack_a, stack_b);
-	ft_sort_three(stack_a);
-	ft_push_to_a(stack_a, stack_b);
+	while (*stack_b)
+		ft_pa(stack_a, stack_b);
 }
