@@ -6,66 +6,84 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 21:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/25 13:38:30 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 01:20:41 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
 
-static int	ft_get_max_bits(t_stack *stack)
+static void	rotate_to_top(t_stack **stack, int pos, char name)
 {
-	int	max;
-	int	bits;
+	int	size;
 
-	max = ft_get_max(stack);
-	bits = 0;
-	while (max > 0)
+	size = ft_stack_size(*stack);
+	if (pos <= size / 2)
 	{
-		max >>= 1;
-		bits++;
+		while (pos-- > 0)
+		{
+			if (name == 'a')
+				ft_ra(stack);
+			else
+				ft_rb(stack);
+		}
 	}
-	return (bits);
+	else
+	{
+		pos = size - pos;
+		while (pos-- > 0)
+		{
+			if (name == 'a')
+				ft_rra(stack);
+			else
+				ft_rrb(stack);
+		}
+	}
 }
 
-static void	ft_radix_sort(t_stack **stack_a, t_stack **stack_b)
+static void	push_to_b_by_chunks(t_stack **stack_a, t_stack **stack_b, int chunk)
 {
-	int	bits;
 	int	i;
-	int	j;
-	int	stack_size;
 
-	bits = ft_get_max_bits(*stack_a);
 	i = 0;
-	while (i < bits)
+	while (*stack_a)
 	{
-		j = 0;
-		stack_size = ft_stack_size(*stack_a);
-		while (j < stack_size)
+		if ((*stack_a)->index <= i)
 		{
-			if (((*stack_a)->value >> i) & 1)
-				ft_ra(stack_a);
-			else
-				ft_pb(stack_a, stack_b);
-			j++;
+			ft_pb(stack_a, stack_b);
+			ft_rb(stack_b);
+			i++;
 		}
-		while (*stack_b)
-			ft_pa(stack_a, stack_b);
-		i++;
+		else if ((*stack_a)->index <= i + chunk)
+		{
+			ft_pb(stack_a, stack_b);
+			i++;
+		}
+		else
+			ft_ra(stack_a);
+	}
+}
+
+static void	sort_back_to_a(t_stack **stack_b, t_stack **stack_a)
+{
+	int	max_pos;
+
+	while (*stack_b)
+	{
+		max_pos = ft_get_max_pos(*stack_b);
+		rotate_to_top(stack_b, max_pos, 'b');
+		ft_pa(stack_a, stack_b);
 	}
 }
 
 void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
 {
-	if (size <= 3)
-	{
-		if (size == 3)
-			ft_sort_three(stack_a);
-		else if (size == 2 && (*stack_a)->value > (*stack_a)->next->value)
-			ft_sa(stack_a);
-		return ;
-	}
-	if (size <= 50)
-		return (ft_strategy_medium(size, stack_a, stack_b));
-	ft_radix_sort(stack_a, stack_b);
+	int	chunk;
+
+	if (size <= 100)
+		chunk = 15;
+	else
+		chunk = 35;
+	push_to_b_by_chunks(stack_a, stack_b, chunk);
+	sort_back_to_a(stack_b, stack_a);
 }
