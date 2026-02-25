@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 19:15:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 20:04:51 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/25 18:01:00 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,7 +53,7 @@ int	*ft_check_args(int argc, char *argv[])
 		ft_error();
 	if (!ft_args_is_in_range(argc, argv))
 		ft_error();
-	tab = (int *) malloc(sizeof(int) * (argc - 1 + 1));
+	tab = (int *) malloc(sizeof(int) * (argc));
 	if (!tab)
 		return (NULL);
 	i = 0;

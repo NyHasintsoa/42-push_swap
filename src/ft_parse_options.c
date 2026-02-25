@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 19:55:48 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/25 18:02:04 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,12 +32,12 @@ static int	ft_parse_bench(int argc)
 	return (1);
 }
 
-static int	ft_check_dup(int *numbers)
+static int	ft_check_dup(int *numbers, int size)
 {
 	int	length;
 
 	length = 0;
-	while (numbers && numbers[length])
+	while (length < size)
 		length++;
 	if (ft_has_dup(numbers, length))
 	{
@@ -59,6 +59,7 @@ t_options	ft_parse_options(int argc, char *argv[])
 {
 	t_options	opts;
 	int			i;
+	int			size;
 
 	opts.strategy = STRATEGY_ADAPTIVE;
 	opts.bench = 0;
@@ -74,7 +75,10 @@ t_options	ft_parse_options(int argc, char *argv[])
 			ft_error();
 		i++;
 	}
+	size = argc - i;
+	if (size == 1)
+		size = ft_count_numbers(argv[i], ' ');
 	opts.numbers = ft_get_numbers(argc, argv, i);
-	opts.count = ft_check_dup(opts.numbers);
+	opts.count = ft_check_dup(opts.numbers, size);
 	return (opts);
 }
