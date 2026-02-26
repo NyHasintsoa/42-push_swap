@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 21:49:52 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:16:38 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 08:36:47 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ typedef enum e_strategy
 	STRATEGY_ADAPTIVE,
 	STRATEGY_UNKNOWN
 }	t_strategy;
-
 
 typedef struct s_bench
 {

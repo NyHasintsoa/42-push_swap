@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:50:51 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 08:32:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ static int	ft_short_sort(
 ) {
 	if (opts.count == 2)
 	{
-		ft_sa(stack_a);
+		ft_sa(stack_a, opts);
 		return (1);
 	}
 	else if (opts.count == 3)
