@@ -6,12 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:18:19 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:13:25 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-#include "libft.h"
+#include "ft_utils.h"
 
 void	ft_sa(t_stack **stack_a, t_options opts)
 {

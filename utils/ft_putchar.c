@@ -1,31 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_putchar.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:39:12 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/08 18:17:07 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-# define LIBFT_H
+#include "ft_utils.h"
 
-# include <stdlib.h>
-# include <unistd.h>
-
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-
-int		ft_strcmp(const char *s1, const char *s2);
-
-int		ft_isdigit(int c);
-long	ft_atol(const char *nptr);
-
-char	**ft_split(char const *s, char c);
-
-void	ft_putnbr(int n);
-
-#endif
+void	ft_putchar(char c)
+{
+	write(1, &c, 1);
+}

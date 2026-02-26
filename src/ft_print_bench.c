@@ -6,13 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/26 07:30:25 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:27:28 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:39:39 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
-#include "libft.h"
 
 static void	ft_print_bench_rotation_parts(t_options opts)
 {

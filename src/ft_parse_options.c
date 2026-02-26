@@ -6,13 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:17:18 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:39:33 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
-#include "libft.h"
 
 static int	ft_is_option(const char *str)
 {

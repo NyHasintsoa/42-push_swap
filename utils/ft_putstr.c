@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/01/26 08:58:15 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:40:06 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/08 18:18:07 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_utils.h"
 
-void	ft_putnbr(int n)
+void	ft_putstr(char *str)
 {
-	long	nbr;
+	unsigned int	i;
 
-	nbr = (long) n;
-	if (nbr < 0)
+	i = 0;
+	if (!str)
+		return ;
+	while (str[i])
 	{
-		ft_putchar('-');
-		nbr *= (-1);
+		ft_putchar(str[i]);
+		i++;
 	}
-	if (nbr >= 10)
-		ft_putnbr(nbr / 10);
-	ft_putchar("0123456789"[nbr % 10]);
 }

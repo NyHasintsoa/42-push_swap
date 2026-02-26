@@ -6,12 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:57:16 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:27:26 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_type.h"
-#include "libft.h"
+#include "ft_utils.h"
 
 t_strategy	ft_parse_strategy(const char *str)
 {

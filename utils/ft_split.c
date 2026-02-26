@@ -6,11 +6,11 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:01:24 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:55:00 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "ft_utils.h"
 
 static char	**ft_free_all(char **tab, int i)
 {

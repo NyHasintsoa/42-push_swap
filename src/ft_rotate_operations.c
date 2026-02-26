@@ -6,13 +6,13 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:21:52 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:13:19 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:38:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_type.h"
 #include "push_swap.h"
-#include "libft.h"
+#include "ft_utils.h"
 
 void	ft_ra(t_stack **stack_a, t_options opts)
 {

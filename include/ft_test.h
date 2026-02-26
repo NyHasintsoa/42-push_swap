@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:09:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:28:15 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:39:00 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@
 # include <stdlib.h>
 # include "ft_type.h"
 # include "ft_utils.h"
-# include "libft.h"
 # include "push_swap.h"
 
 void	ft_print_stack(t_stack *stack);

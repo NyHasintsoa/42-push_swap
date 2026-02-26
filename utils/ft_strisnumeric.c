@@ -6,12 +6,11 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 20:09:06 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/10 19:58:33 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:40:45 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
-#include "libft.h"
 
 int	ft_strisnumeric(const char *str)
 {
