@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 01:27:26 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:02:44 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	ft_error(void);
 void	ft_exit(void);
 
 float	ft_compute_disorder(t_options opts);
+char	*ft_format_disorder(float disorder);
 
 #endif

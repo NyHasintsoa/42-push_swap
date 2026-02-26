@@ -6,11 +6,11 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 20:33:48 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 21:03:15 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:27:01 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_type.h"
+#include "push_swap.h"
 
 float	ft_compute_disorder(t_options opts)
 {
@@ -35,4 +35,25 @@ float	ft_compute_disorder(t_options opts)
 		i++;
 	}
 	return ((float) mistakes / total_pairs);
+}
+
+char	*ft_format_disorder(float disorder)
+{
+	char	*str;
+	int		first;
+	int		last;
+
+	str = (char *) malloc(sizeof(char) * 7);
+	if (!str)
+		return (NULL);
+	first = (int) disorder;
+	last = (int)((disorder - first) * 100);
+	str[0] = (first / 10) + '0';
+	str[1] = (first % 10) + '0';
+	str[2] = '.';
+	str[3] = (last / 10) + '0';
+	str[4] = (last % 10) + '0';
+	str[5] = '%';
+	str[6] = '\0';
+	return (str);
 }

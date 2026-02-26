@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:32:54 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:14:10 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,8 @@ void	push_swap(t_options opts)
 	}
 	stack_b = NULL;
 	ft_sort_stack(opts, &stack_a, &stack_b);
+	if (opts.is_bench)
+		ft_print_bench(opts);
 	ft_stack_free(&stack_a);
 	ft_stack_free(&stack_b);
 }

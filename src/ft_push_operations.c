@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:18:17 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:34:03 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:12:52 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 void	ft_pa(t_stack **stack_a, t_stack **stack_b, t_options opts)
 {
-	ft_putstr("pa\n");
+	if (!opts.is_bench)
+		ft_putstr("pa\n");
 	opts.bench->pa += 1;
 	if (*stack_b)
 		ft_stack_push(stack_a, ft_stack_top(stack_b));
@@ -23,7 +24,8 @@ void	ft_pa(t_stack **stack_a, t_stack **stack_b, t_options opts)
 
 void	ft_pb(t_stack **stack_a, t_stack **stack_b, t_options opts)
 {
-	ft_putstr("pb\n");
+	if (!opts.is_bench)
+		ft_putstr("pb\n");
 	opts.bench->pb += 1;
 	if (*stack_a)
 		ft_stack_push(stack_b, ft_stack_top(stack_a));
