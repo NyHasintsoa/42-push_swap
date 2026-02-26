@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/26 09:42:23 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/26 09:45:11 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,18 +22,14 @@ SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
 		ft_stack_utils.c ft_isdigit.c ft_atol.c ft_putchar.c ft_putstr.c \
 		ft_split.c ft_strcmp.c ft_putnbr.c
 
-SRCS_TESTS := ft_print_stack.c ft_print_options.c
-
 NAME := push_swap
 
 SRC_DIR := src/
 UTILS_DIR := utils/
-TESTS_DIR := tests/
 HEADER_DIR := include
 
 OBJS := $(addprefix $(SRC_DIR), $(SRCS:.c=.o)) \
 		$(addprefix $(UTILS_DIR), $(SRCS_UTILS:.c=.o)) \
-		$(addprefix $(TESTS_DIR), $(SRCS_TESTS:.c=.o)) \
 
 CFLAGS := -Wall -Wextra -Werror
 CC := @cc

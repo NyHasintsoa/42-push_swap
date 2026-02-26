@@ -6,13 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:14:10 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 09:45:27 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
-#include "ft_test.h"
 
 static int	ft_short_sort(
 	t_options opts,
