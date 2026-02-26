@@ -1,27 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strategy_adaptive.c                             :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 21:15:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:48:26 by nramalan         ###   ########.fr       */
+/*   Created: 2026/01/26 08:58:15 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/26 07:40:06 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "libft.h"
 
-void	ft_strategy_adaptive(
-	t_options opts,
-	t_stack **stack_a,
-	t_stack **stack_b,
-	float disorder
-) {
-	if (disorder < 0.2)
-		ft_strategy_simple(opts, stack_a, stack_b);
-	else if (disorder >= 0.2 && disorder < 0.5)
-		ft_strategy_medium(opts, stack_a, stack_b);
-	else if (disorder >= 0.5)
-		ft_strategy_complex(opts, stack_a, stack_b);
+void	ft_putnbr(int n)
+{
+	long	nbr;
+
+	nbr = (long) n;
+	if (nbr < 0)
+	{
+		ft_putchar('-');
+		nbr *= (-1);
+	}
+	if (nbr >= 10)
+		ft_putnbr(nbr / 10);
+	ft_putchar("0123456789"[nbr % 10]);
 }

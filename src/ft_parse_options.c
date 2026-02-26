@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/25 18:02:04 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:17:18 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ t_options	ft_parse_options(int argc, char *argv[])
 	int			size;
 
 	opts.strategy = STRATEGY_ADAPTIVE;
-	opts.bench = 0;
+	opts.is_bench = 0;
 	opts.numbers = NULL;
 	i = 1;
 	while (i < argc && ft_is_option(argv[i]))
@@ -70,7 +70,7 @@ t_options	ft_parse_options(int argc, char *argv[])
 		if (ft_parse_strategy(argv[i]) != STRATEGY_UNKNOWN)
 			opts.strategy = ft_parse_strategy(argv[i]);
 		else if (ft_strcmp(argv[i], "--bench") == 0)
-			opts.bench = ft_parse_bench(argc);
+			opts.is_bench = ft_parse_bench(argc);
 		else
 			ft_error();
 		i++;

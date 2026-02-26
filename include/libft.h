@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:56:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 18:09:59 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:39:12 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ int		ft_isdigit(int c);
 long	ft_atol(const char *nptr);
 
 char	**ft_split(char const *s, char c);
+
+void	ft_putnbr(int n);
 
 #endif

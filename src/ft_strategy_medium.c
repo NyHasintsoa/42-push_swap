@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 00:54:44 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:48:54 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,14 @@ static void	push_to_b_by_chunks(t_stack **stack_a, t_stack **stack_b, int chunk)
 	}
 }
 
-void	ft_strategy_medium(int size, t_stack **stack_a, t_stack **stack_b)
+void	ft_strategy_medium(t_options opts, t_stack **stack_a, t_stack **stack_b)
 {
 	int	chunk;
 
-	if (size <= 100)
-		chunk = size / 16;
+	if (opts.count <= 100)
+		chunk = opts.count / 16;
 	else
-		chunk = size / 30;
+		chunk = opts.count / 30;
 	push_to_b_by_chunks(stack_a, stack_b, chunk);
 	empty_stack_b(stack_b, stack_a);
 }

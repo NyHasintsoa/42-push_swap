@@ -6,13 +6,14 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:51:35 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/10 22:58:05 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/26 07:38:41 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS := ft_isdigit.c ft_atol.c \
 		ft_putchar.c ft_putstr.c \
-		ft_split.c ft_strcmp.c
+		ft_split.c ft_strcmp.c \
+		ft_putnbr.c
 
 NAME := libft.a
 

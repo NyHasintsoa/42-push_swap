@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/25 23:51:34 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:48:59 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,12 +34,12 @@ static void	ft_put_min_top(t_stack **stack_a)
 		ft_rra(stack_a);
 }
 
-void	ft_strategy_simple(int size, t_stack **stack_a, t_stack **stack_b)
+void	ft_strategy_simple(t_options opts, t_stack **stack_a, t_stack **stack_b)
 {
 	while (*stack_a && (*stack_a)->next)
 	{
 		ft_put_min_top(stack_a);
-		if (ft_check_stack_sorted(*stack_a, size))
+		if (ft_check_stack_sorted(*stack_a, opts.count))
 			break ;
 		ft_pb(stack_a, stack_b);
 	}

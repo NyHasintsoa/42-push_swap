@@ -1,27 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strategy_adaptive.c                             :+:      :+:    :+:   */
+/*   ft_bench.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/15 21:15:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 07:48:26 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/26 05:49:26 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/26 07:18:19 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_type.h"
 
-void	ft_strategy_adaptive(
-	t_options opts,
-	t_stack **stack_a,
-	t_stack **stack_b,
-	float disorder
-) {
-	if (disorder < 0.2)
-		ft_strategy_simple(opts, stack_a, stack_b);
-	else if (disorder >= 0.2 && disorder < 0.5)
-		ft_strategy_medium(opts, stack_a, stack_b);
-	else if (disorder >= 0.5)
-		ft_strategy_complex(opts, stack_a, stack_b);
+t_bench	ft_init_bench(float disorder)
+{
+	t_bench	bench;
+
+	bench.disorder = disorder;
+	bench.sa = 0;
+	bench.sb = 0;
+	bench.ss = 0;
+	bench.pa = 0;
+	bench.pb = 0;
+	bench.ra = 0;
+	bench.rb = 0;
+	bench.rr = 0;
+	bench.rra = 0;
+	bench.rrb = 0;
+	bench.rrr = 0;
+	return (bench);
 }

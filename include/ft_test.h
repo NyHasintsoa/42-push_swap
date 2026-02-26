@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:09:57 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/15 19:52:49 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:20:58 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,6 @@
 
 void	ft_print_stack(t_stack *stack);
 void	ft_print_options(t_options opts);
+void	ft_print_bench(t_options bench);
 
 #endif

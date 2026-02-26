@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 21:00:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 01:20:41 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:48:36 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,11 +76,11 @@ static void	sort_back_to_a(t_stack **stack_b, t_stack **stack_a)
 	}
 }
 
-void	ft_strategy_complex(int size, t_stack **stack_a, t_stack **stack_b)
+void	ft_strategy_complex(t_options opts, t_stack **stack_a, t_stack **stack_b)
 {
 	int	chunk;
 
-	if (size <= 100)
+	if (opts.count <= 100)
 		chunk = 15;
 	else
 		chunk = 35;

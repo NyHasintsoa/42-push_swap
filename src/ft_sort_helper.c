@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:41:32 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 01:57:46 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/26 07:47:30 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,11 +62,12 @@ int	ft_get_max_pos(t_stack *stack)
 	return (max_pos);
 }
 
-void	ft_sort_three(t_stack **stack)
+void	ft_sort_three(t_stack **stack, t_options opts)
 {
 	int	first;
 	int	second;
 	int	third;
+    (void) opts;
 
 	first = (*stack)->value;
 	second = (*stack)->next->value;
@@ -115,20 +116,20 @@ static void	ft_put_min_top(t_stack **stack_a)
 	}
 }
 
-void	ft_sort_min(t_stack **stack_a, t_stack **stack_b, int size)
+void	ft_sort_min(t_stack **stack_a, t_stack **stack_b, t_options opts)
 {
 	int	push_count;
 
-	push_count = size - 3;
+	push_count = opts.count - 3;
 	while (push_count > 0)
 	{
 		ft_put_min_top(stack_a);
-		if (ft_check_stack_sorted(*stack_a, size))
+		if (ft_check_stack_sorted(*stack_a, opts.count))
 			break ;
 		ft_pb(stack_a, stack_b);
 		push_count--;
 	}
-	ft_sort_three(stack_a);
+	ft_sort_three(stack_a, opts);
 	while (*stack_b)
 		ft_pa(stack_a, stack_b);
 }
