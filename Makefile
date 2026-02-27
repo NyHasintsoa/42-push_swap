@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/26 09:45:11 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/27 13:27:16 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -22,15 +22,23 @@ SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
 		ft_stack_utils.c ft_isdigit.c ft_atol.c ft_putchar.c ft_putstr.c \
 		ft_split.c ft_strcmp.c ft_putnbr.c
 
+SRCS_BONUS := main.c checker.c
+
 NAME := push_swap
+BONUS_NAME := checker
 
 SRC_DIR := src/
 UTILS_DIR := utils/
+BONUS_DIR := bonus/
 HEADER_DIR := include
 
 OBJS := $(addprefix $(SRC_DIR), $(SRCS:.c=.o)) \
 		$(addprefix $(UTILS_DIR), $(SRCS_UTILS:.c=.o)) \
 
+OBJS_BONUS := $(addprefix $(BONUS_DIR), $(SRCS_BONUS:.c=.o)) \
+			$(addprefix $(UTILS_DIR), $(SRCS_UTILS:.c=.o)) \
+
+LIBFT := libft/libft.a
 CFLAGS := -Wall -Wextra -Werror
 CC := @cc
 RM := @rm -f
@@ -42,25 +50,36 @@ BLUE = /bin/echo -e "\033[0;94m $1 \x1b[0m"
 .PHONY: all
 all: $(NAME)
 
-.PHONY: obs
-obs:
-	@echo $(OBJS)
+.PHONY: bonus
+bonus: $(BONUS_NAME)
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER_DIR) -c $< -o ${<:.c=.o}
 
-$(NAME): $(OBJS)
+$(NAME): $(LIBFT) $(OBJS)
 	@$(call BLUE,"Compiling Push Swap ...")
-	$(CC) $(CFLAGS) $(OBJS) -lm -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
 	@$(call GREEN,"Push Swap compiled successfully")
+
+$(BONUS_NAME): $(LIBFT) $(OBJS_BONUS)
+	@$(call BLUE,"Compiling Push Swap Checker ...")
+	$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(BONUS_NAME)
+	@$(call GREEN,"Checker Push Swap compiled successfully")
+
+$(LIBFT):
+	@$(call BLUE,"Compiling Libft ...")
+	@$(MAKE) --silent -C libft
 
 .PHONY: clean
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(OBJS_BONUS)
+	@$(MAKE) --silent -C libft clean
 
 .PHONY: fclean
 fclean: clean
-	$(RM) $(NAME)
+	$(RM) $(NAME) $(BONUS_NAME)
+	@$(MAKE) --silent -C libft fclean
 
 .PHONY: re
 re: fclean all
+	@$(MAKE) --silent -C libft re
