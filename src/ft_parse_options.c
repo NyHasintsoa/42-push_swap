@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 20:30:00 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 17:24:57 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 22:14:05 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,14 +26,14 @@ static int	ft_is_option(const char *str)
 
 static int	*ft_get_numbers(int argc, char *argv[], int index)
 {
-    int *numbers;
+	int	*numbers;
 
-    numbers = NULL;
+	numbers = NULL;
 	if ((argc - index) > 1)
 		numbers = ft_check_args(argc - index + 1, &argv[index - 1]);
 	else
 		numbers = ft_check_str(argv[index]);
-    return (numbers);
+	return (numbers);
 }
 
 static void	ft_add_numbers(t_options *opts, int argc, int index, char *argv[])

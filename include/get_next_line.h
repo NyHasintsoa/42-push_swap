@@ -1,26 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/27 14:26:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 22:20:03 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/04 08:03:40 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/27 21:13:49 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
-#include "ft_utils.h"
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 
-int	main(int argc, char *argv[])
-{
-	t_opts_checker	opts;
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE	42
+# endif
 
-	if ((argc - 1) == 0)
-		return (1);
-	opts = ft_parse_args(argc, argv);
-	push_swap_checker(opts);
-	free(opts.numbers);
-	return (0);
-}
+# include <stdlib.h>
+# include <unistd.h>
+# include "libft.h"
+
+char	*ft_strjoin_line(char *s1, char *s2);
+
+char	*get_next_line(int fd);
+
+#endif

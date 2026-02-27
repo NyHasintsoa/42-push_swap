@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 16:42:17 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 21:48:05 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ int			*ft_check_str(char *argv);
 int			ft_check_array_sorted(int *numbers, int size);
 int			ft_check_stack_sorted(t_stack *stack, int size);
 
+int			ft_strcmp(const char *s1, const char *s2);
 long		ft_atol(const char *nptr);
 
 int			ft_isspace(char c);

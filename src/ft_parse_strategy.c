@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 23:57:16 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 14:04:20 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 21:58:40 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_utils.h"
 
 t_strategy	ft_parse_strategy(const char *str)
 {

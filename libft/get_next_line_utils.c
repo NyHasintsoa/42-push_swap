@@ -1,44 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_test.c                                          :+:      :+:    :+:   */
+/*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/27 17:36:36 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 18:00:25 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/04 08:14:07 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/27 21:13:42 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
-#include "ft_utils.h"
-#include <stdio.h>
+#include "get_next_line.h"
 
-void	ft_print_stack(t_stack *stack)
+char	*ft_strjoin_line(char *s1, char *s2)
 {
-	t_stack	*lst;
-	int		i;
-	int		size;
+	char	*str;
+	size_t	length;
+	size_t	i;
+	size_t	j;
 
-	lst = stack;
-	size = ft_stack_size(stack);
+	length = ft_strlen(s1) + ft_strlen(s2);
+	str = (char *) malloc(sizeof(char) * (length + 1));
+	if (!str)
+		return (NULL);
 	i = 0;
-	while (i < size)
+	while (s1 && s1[i])
 	{
-		printf("tab[%d] = '%d'\n", i, lst->value);
-		lst = lst->next;
+		str[i] = s1[i];
 		i++;
 	}
-}
-
-void	ft_print_numbers(t_opts_checker opts)
-{
-	int		i;
-
-	i = 0;
-	while (i < opts.size)
+	free(s1);
+	j = 0;
+	while (s2[j])
 	{
-		printf("tab[%d] = '%d'\n", i, opts.numbers[i]);
-		i++;
+		str[i + j] = s2[j];
+		j++;
 	}
+	str[length] = '\0';
+	return (str);
 }

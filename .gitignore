@@ -3,8 +3,10 @@ push_swap
 /.vscode
 args.txt
 bench.txt
+cmd.txt
 checker_linux
 checker
 push_swap_test_linux.sh
+checker_test_linux.sh
 0
 traces.txt

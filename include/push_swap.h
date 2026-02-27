@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 18:10:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 16:42:10 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 21:47:57 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@
 
 void		push_swap(t_options opts);
 
-int			ft_strcmp(const char *s1, const char *s2);
 t_options	ft_parse_options(int argc, char *argv[]);
 t_strategy	ft_parse_strategy(const char *str);
 
