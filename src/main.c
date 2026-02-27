@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:59:46 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:31:14 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 14:17:32 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_utils.h"
 
 int	main(int argc, char *argv[])
 {

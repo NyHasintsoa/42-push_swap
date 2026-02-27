@@ -6,11 +6,11 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 17:46:26 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/11 20:23:52 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 14:06:15 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "push_swap.h"
+#include "ft_utils.h"
 
 void	ft_stack_push(t_stack **stack, t_stack *node)
 {

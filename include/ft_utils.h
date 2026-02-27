@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 13:31:55 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 14:11:36 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,31 @@
 # include <stdlib.h>
 # include "ft_type.h"
 
-int		ft_strcmp(const char *s1, const char *s2);
+int			ft_check_array_sorted(int *numbers, int size);
+int			ft_check_stack_sorted(t_stack *stack, int size);
 
-long	ft_atol(const char *nptr);
+long		ft_atol(const char *nptr);
 
-int		ft_isspace(char c);
-int		ft_issign(char c);
-int		ft_strisnumeric(const char *str);
-int		ft_has_dup(int *tab, int size);
-int		ft_count_numbers(const char *s, char c);
-int		ft_words_is_in_range(char **words);
+int			ft_isspace(char c);
+int			ft_issign(char c);
+int			ft_strisnumeric(const char *str);
+int			ft_has_dup(int *tab, int size);
+int			ft_count_numbers(const char *s, char c);
+int			ft_words_is_in_range(char **words);
 
-void	ft_error(void);
-void	ft_exit(void);
+t_stack		*ft_stack_top(t_stack **stack);
+void		ft_stackadd_back(t_stack **stacks, t_stack *node);
 
-float	ft_compute_disorder(t_options opts);
-char	*ft_format_disorder(float disorder);
+void		ft_stack_push(t_stack **stack, t_stack *node);
+void		ft_stack_swap(t_stack **stack);
+void		ft_stack_rotate(t_stack **stack);
+void		ft_stack_reverse_rotate(t_stack **stack);
+
+int			ft_stack_size(t_stack *stack);
+void		ft_stack_free(t_stack **stack);
+t_stack		*ft_stack_init(int *numbers, int count);
+
+void		ft_error(void);
+void		ft_exit(void);
 
 #endif

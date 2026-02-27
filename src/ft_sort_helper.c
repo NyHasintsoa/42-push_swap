@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/24 19:41:32 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:23:08 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 14:19:03 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+#include "ft_utils.h"
 
 int	ft_get_min_pos(t_stack *stack)
 {
