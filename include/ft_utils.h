@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:37:02 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:31:55 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,9 @@
 # include <stdlib.h>
 # include "ft_type.h"
 
-void	ft_putchar(char c);
-void	ft_putstr(char *str);
-void	ft_putnbr(int n);
-
 int		ft_strcmp(const char *s1, const char *s2);
 
-int		ft_isdigit(int c);
 long	ft_atol(const char *nptr);
-
-char	**ft_split(char const *s, char c);
 
 int		ft_isspace(char c);
 int		ft_issign(char c);

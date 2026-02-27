@@ -6,11 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:56:04 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:40:04 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:40:35 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_utils.h"
+#include "libft.h"
 
 long	ft_atol(const char *nptr)
 {

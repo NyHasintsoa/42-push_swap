@@ -6,12 +6,13 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 21:00:02 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:39:27 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 13:38:11 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
+#include "libft.h"
 
 static int	ft_words_are_numeric(char *words[])
 {

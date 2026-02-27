@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/27 13:27:16 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/27 13:44:06 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ SRCS := main.c push_swap.c ft_check_args.c ft_check_str.c ft_check_sort.c \
 
 SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
 		ft_check_dup.c ft_check_range.c ft_disorder.c ft_count.c \
-		ft_stack_utils.c ft_isdigit.c ft_atol.c ft_putchar.c ft_putstr.c \
-		ft_split.c ft_strcmp.c ft_putnbr.c
+		ft_stack_utils.c ft_atol.c ft_strcmp.c \
 
 SRCS_BONUS := main.c checker.c
 
@@ -48,22 +47,22 @@ RED = /bin/echo -e "\x1b[31m $1 \x1b[0m"
 BLUE = /bin/echo -e "\033[0;94m $1 \x1b[0m"
 
 .PHONY: all
-all: $(NAME)
+all: $(LIBFT) $(NAME)
 
 .PHONY: bonus
-bonus: $(BONUS_NAME)
+bonus: $(LIBFT) $(BONUS_NAME)
 
 .c.o:
 	$(CC) $(CFLAGS) -I$(HEADER_DIR) -c $< -o ${<:.c=.o}
 
 $(NAME): $(LIBFT) $(OBJS)
 	@$(call BLUE,"Compiling Push Swap ...")
-	$(CC) $(CFLAGS) $(OBJS) -o $(NAME)
+	$(CC) $(CFLAGS) $(OBJS) $(LIBFT) -lm -o $(NAME)
 	@$(call GREEN,"Push Swap compiled successfully")
 
 $(BONUS_NAME): $(LIBFT) $(OBJS_BONUS)
 	@$(call BLUE,"Compiling Push Swap Checker ...")
-	$(CC) $(CFLAGS) $(OBJS_BONUS) -o $(BONUS_NAME)
+	$(CC) $(CFLAGS) $(OBJS_BONUS) $(LIBFT) -lm -o $(BONUS_NAME)
 	@$(call GREEN,"Checker Push Swap compiled successfully")
 
 $(LIBFT):
