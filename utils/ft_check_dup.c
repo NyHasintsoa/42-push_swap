@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 22:21:37 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 15:22:42 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 17:24:28 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,15 +34,10 @@ int	ft_has_dup(int *tab, int size)
 
 int	ft_check_dup(int *numbers, int size)
 {
-	int	length;
-
-	length = 0;
-	while (length < size)
-		length++;
-	if (ft_has_dup(numbers, length))
+	if (ft_has_dup(numbers, size))
 	{
 		free(numbers);
 		ft_error();
 	}
-	return (length);
+	return (size);
 }

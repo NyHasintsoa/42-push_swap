@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 15:22:34 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 16:42:17 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include "ft_type.h"
+
+int			*ft_check_args(int argc, char *argv[]);
+int			*ft_check_str(char *argv);
 
 int			ft_check_array_sorted(int *numbers, int size);
 int			ft_check_stack_sorted(t_stack *stack, int size);

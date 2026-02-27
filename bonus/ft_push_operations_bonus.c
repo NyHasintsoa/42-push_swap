@@ -1,33 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   ft_push_operations_bonus.c                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/27 14:26:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 18:04:01 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/15 19:18:17 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/27 16:22:05 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
 #include "ft_utils.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_pa(t_stack **stack_a, t_stack **stack_b)
 {
-    t_opts_checker opts;
-	int			is_sorted;
+	if (*stack_b)
+		ft_stack_push(stack_a, ft_stack_top(stack_b));
+}
 
-	if ((argc - 1) == 0)
-		return (1);
-    opts = ft_parse_args(argc, argv);
-	is_sorted = ft_check_array_sorted(opts.numbers, opts.size);
-	if (is_sorted)
-	{
-		free(opts.numbers);
-		return (0);
-	}
-    push_swap_checker(opts);
-    free(opts.numbers);
-	return (0);
+void	ft_pb(t_stack **stack_a, t_stack **stack_b)
+{
+	if (*stack_a)
+		ft_stack_push(stack_b, ft_stack_top(stack_a));
 }

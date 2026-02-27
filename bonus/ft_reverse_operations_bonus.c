@@ -1,33 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_bonus.c                                       :+:      :+:    :+:   */
+/*   ft_reverse_operations_bonus.c                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/27 14:26:54 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 18:04:01 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/15 19:19:39 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/27 16:22:29 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "checker_bonus.h"
 #include "ft_utils.h"
+#include "libft.h"
 
-int	main(int argc, char *argv[])
+void	ft_rra(t_stack **stack_a)
 {
-    t_opts_checker opts;
-	int			is_sorted;
+	ft_stack_reverse_rotate(stack_a);
+}
 
-	if ((argc - 1) == 0)
-		return (1);
-    opts = ft_parse_args(argc, argv);
-	is_sorted = ft_check_array_sorted(opts.numbers, opts.size);
-	if (is_sorted)
-	{
-		free(opts.numbers);
-		return (0);
-	}
-    push_swap_checker(opts);
-    free(opts.numbers);
-	return (0);
+void	ft_rrb(t_stack **stack_b)
+{
+	ft_stack_reverse_rotate(stack_b);
+}
+
+void	ft_rrr(t_stack **stack_a, t_stack **stack_b)
+{
+	ft_stack_reverse_rotate(stack_a);
+	ft_stack_reverse_rotate(stack_b);
 }

@@ -6,13 +6,12 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/08 17:59:46 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 16:13:47 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 18:05:15 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 #include "ft_utils.h"
-#include <stdio.h>
 
 int	main(int argc, char *argv[])
 {
@@ -22,7 +21,7 @@ int	main(int argc, char *argv[])
 	float		disorder;
 
 	if ((argc - 1) == 0)
-		return (0);
+		return (1);
 	opts = ft_parse_options(argc, argv);
 	disorder = ft_compute_disorder(opts);
 	bench = ft_init_bench(disorder * 100);
