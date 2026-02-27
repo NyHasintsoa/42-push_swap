@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/10 21:49:52 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 08:36:47 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 15:09:14 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_bench
 typedef struct s_options
 {
 	t_strategy	strategy;
+	int			is_strategy;
 	int			is_bench;
 	int			*numbers;
 	int			count;

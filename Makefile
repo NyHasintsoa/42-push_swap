@@ -6,7 +6,7 @@
 #    By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/02/08 17:46:53 by nramalan          #+#    #+#              #
-#    Updated: 2026/02/27 14:16:44 by nramalan         ###   ########.fr        #
+#    Updated: 2026/02/27 14:27:43 by nramalan         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,7 @@ SRCS_UTILS := ft_issign.c ft_isspace.c ft_strisnumeric.c ft_error.c \
 		ft_check_dup.c ft_check_range.c ft_check_sort.c ft_count.c \
 		ft_stack.c ft_stack_operations.c ft_stack_utils.c ft_atol.c \
 
-SRCS_BONUS := main.c checker.c
+SRCS_BONUS := main_bonus.c checker_bonus.c
 
 NAME := push_swap
 BONUS_NAME := checker

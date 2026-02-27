@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/09 19:46:45 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 14:11:36 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 15:22:34 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ int			ft_isspace(char c);
 int			ft_issign(char c);
 int			ft_strisnumeric(const char *str);
 int			ft_has_dup(int *tab, int size);
+int			ft_check_dup(int *numbers, int size);
 int			ft_count_numbers(const char *s, char c);
 int			ft_words_is_in_range(char **words);
 

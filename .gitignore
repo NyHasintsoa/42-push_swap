@@ -2,7 +2,9 @@ libft/libft.a
 push_swap
 /.vscode
 args.txt
+bench.txt
 checker_linux
+checker
 push_swap_test_linux.sh
 0
 traces.txt

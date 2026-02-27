@@ -6,7 +6,7 @@
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/11 18:30:05 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/26 09:45:27 by nramalan         ###   ########.fr       */
+/*   Updated: 2026/02/27 15:57:36 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,12 +65,7 @@ void	push_swap(t_options opts)
 {
 	t_stack		*stack_a;
 	t_stack		*stack_b;
-	float		disorder;
-	t_bench		bench;
 
-	disorder = ft_compute_disorder(opts);
-	bench = ft_init_bench(disorder * 100);
-	opts.bench = &bench;
 	stack_a = ft_stack_init(opts.numbers, opts.count);
 	if (!stack_a)
 	{

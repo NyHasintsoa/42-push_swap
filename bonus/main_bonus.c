@@ -1,48 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_check_dup.c                                     :+:      :+:    :+:   */
+/*   main_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: nramalan <nramalan@student.42antananari    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2026/02/09 22:21:37 by nramalan          #+#    #+#             */
-/*   Updated: 2026/02/27 15:22:42 by nramalan         ###   ########.fr       */
+/*   Created: 2026/02/27 14:26:54 by nramalan          #+#    #+#             */
+/*   Updated: 2026/02/27 15:04:21 by nramalan         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_utils.h"
+#include <stdio.h>
 
-int	ft_has_dup(int *tab, int size)
+int	main(void)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < size)
-	{
-		j = i + 1;
-		while (j < size)
-		{
-			if (tab[i] == tab[j])
-				return (1);
-			j++;
-		}
-		i++;
-	}
+	printf("Bonus here\n");
 	return (0);
-}
-
-int	ft_check_dup(int *numbers, int size)
-{
-	int	length;
-
-	length = 0;
-	while (length < size)
-		length++;
-	if (ft_has_dup(numbers, length))
-	{
-		free(numbers);
-		ft_error();
-	}
-	return (length);
 }
